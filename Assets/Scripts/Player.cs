@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
 
     [SerializeField]
-    private float _max_health;
+    private float _max_health = 100f;
 
     [SerializeField]
     private float _health;
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
 
     public event Action OnCollectCoin;
+
+    public event Action OnDamage;
 
 
 
@@ -70,5 +72,7 @@ public class Player : MonoBehaviour
     public void Damage(float amount)
     {
         _health = Mathf.Clamp(_health - amount, 0f, _health);
+
+        OnDamage.Invoke();
     }
 }
