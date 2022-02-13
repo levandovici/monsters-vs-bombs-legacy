@@ -22,7 +22,10 @@ public class GameSceneManager : MonoBehaviour
     private SoundManager _sound_manager;
 
     [SerializeField]
-    private Animator _game_ui;
+    private Transform _game_ui;
+
+    [SerializeField]
+    private Transform _over_ui;
 
     [SerializeField]
     private GameObject[] _backgrounds;
@@ -206,7 +209,9 @@ public class GameSceneManager : MonoBehaviour
 
         _game_over = true;
 
-        _game_ui.SetBool("Over", true);
+        _game_ui.gameObject.SetActive(false);
+
+        _over_ui.gameObject.SetActive(true);
 
         Destroy(_player.gameObject);
 

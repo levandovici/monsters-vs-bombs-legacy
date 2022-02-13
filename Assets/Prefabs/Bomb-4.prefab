@@ -153,7 +153,7 @@ MonoBehaviour:
   _explosion: {fileID: 2374415218310912833, guid: 2a8cc0975ec1f614eaeb067e21f9da09, type: 3}
   _fresh_candle_wick: {fileID: 344801318525051443}
   _burning_candle_wick: {fileID: 344801316904589892}
-  _fall_speed: 110
+  _fall_speed: 11
   _fall: 0
   _move_speed: 8.4
   _rotate_speed: 216
