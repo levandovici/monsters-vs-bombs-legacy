@@ -26,6 +26,18 @@ TextureImporter:
   - first:
       213: -8400622410092147034
     second: Play-Blue
+  - first:
+      213: 6073536667876728688
+    second: Settings-Red
+  - first:
+      213: 2073289690854212600
+    second: Settings-Green
+  - first:
+      213: -244570013963071155
+    second: Settings-Orange
+  - first:
+      213: 2294963774762841369
+    second: Settings-Blue
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -290,6 +302,90 @@ TextureImporter:
       bones: []
       spriteID: 6ae854a2d6efa6b80800000000000000
       internalID: -8400622410092147034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings-Red
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 368
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f1a13ab69894450800000000000000
+      internalID: 6073536667876728688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings-Green
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 368
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f348d33dfdc5cc10800000000000000
+      internalID: 2073289690854212600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings-Orange
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 368
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41d40b3edc1b9cf0800000000000000
+      internalID: -244570013963071155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings-Blue
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 368
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915f027d46959df10800000000000000
+      internalID: 2294963774762841369
       vertices: []
       indices: 
       edges: []
