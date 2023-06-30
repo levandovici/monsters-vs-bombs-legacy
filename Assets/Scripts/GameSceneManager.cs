@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -84,6 +85,55 @@ public class GameSceneManager : MonoBehaviour
 
 
 
+    [SerializeField]
+    private Button _pause;
+
+    [SerializeField]
+    private bool _is_paused = false;
+
+    [SerializeField]
+    private Button _try_again;
+
+    [SerializeField]
+    private Button _main_menu;
+
+
+
+    private void Awake()
+    {
+        SaveLoadManager.LoadData();
+
+        _is_paused = false;
+
+        _pause.onClick.AddListener(() =>
+        {
+            if(_is_paused)
+            {
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+
+                SaveLoadManager.SaveData();
+            }
+
+            _is_paused = !_is_paused;
+        });
+
+        _try_again.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(1);
+        });
+
+        _main_menu.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(0);
+        });
+    }
+
+
+
     private void Start()
     {
         _screen_size = new Vector2(Screen.width, Screen.height);
@@ -104,6 +154,8 @@ public class GameSceneManager : MonoBehaviour
             _sound_manager.PlaySfx(SoundManager.ESfx.collect_coin);
 
             _coins++;
+
+            SaveLoadManager.AddCoin();
         };
 
         _player.OnDamage += () =>
@@ -112,6 +164,8 @@ public class GameSceneManager : MonoBehaviour
 
             if(_player.Health <= 0f)
             {
+                SaveLoadManager.SaveData();
+
                 GameOver();
             }
         };
