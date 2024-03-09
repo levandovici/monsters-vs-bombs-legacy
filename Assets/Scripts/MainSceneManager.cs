@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour
 {
+    private const string PRIVACY_POLICY = @"https://limonado-entertainment.jimdosite.com/privacy.policy/";
+
+
     [SerializeField]
     private Button _play;
 
     [SerializeField]
     private Text _coins;
+
+    [SerializeField]
+    private Button _privacy;
 
 
 
@@ -21,6 +27,11 @@ public class MainSceneManager : MonoBehaviour
         _play.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(1);
+        });
+
+        _privacy.onClick.AddListener(() =>
+        {
+            Application.OpenURL(PRIVACY_POLICY);
         });
     }
 
