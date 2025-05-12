@@ -24,26 +24,25 @@ public static class SaveLoadManager
         return _data.coins;
     }
 
+    public static void SetSelected(int selected)
+    {
+        _data.selected = selected;
+    }
+
+    public static int GetSelected()
+    {
+        return _data.selected;
+    }
+
 
     
     public static void LoadData()
     {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        string path = Path.Combine(Application.dataPath, DATA_PATH);
-
-#elif UNITY_ANDROID
-        string path = Path.Combine(Application.persistentDataPath, DATA_PATH);
-
-#else
-        string path = Path.Combine(Application.dataPath, DATA_PATH);
-
-#endif
-
-        if (File.Exists(path)) 
+        if (PlayerPrefs.HasKey(DATA_PATH)) 
         {
             try
             {
-                string json = File.ReadAllText(path);
+                string json = PlayerPrefs.GetString(DATA_PATH);
 
                 _data = JsonUtility.FromJson<PlayerData>(json);
             }
@@ -60,20 +59,9 @@ public static class SaveLoadManager
 
     public static void SaveData()
     {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        string path = Path.Combine(Application.dataPath, DATA_PATH);
-
-#elif UNITY_ANDROID
-        string path = Path.Combine(Application.persistentDataPath, DATA_PATH);
-
-#else
-        string path = Path.Combine(Application.dataPath, DATA_PATH);
-
-#endif
-
         if(_data != null)
         {
-            File.WriteAllText(path, JsonUtility.ToJson(_data, true));
+            PlayerPrefs.SetString(DATA_PATH, JsonUtility.ToJson(_data, true));
         }
     }
 }

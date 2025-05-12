@@ -73,6 +73,9 @@ public class GameSceneManager : MonoBehaviour
     private Player _player;
 
     [SerializeField]
+    private Player[] _monsters;
+
+    [SerializeField]
     private Transform _objects;
 
     private bool _game_over = false;
@@ -130,6 +133,13 @@ public class GameSceneManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         });
+
+        if(_player != null)
+        {
+            Destroy(_player.gameObject);
+        }
+
+        _player = Instantiate(_monsters[SaveLoadManager.GetSelected()]);
     }
 
 
