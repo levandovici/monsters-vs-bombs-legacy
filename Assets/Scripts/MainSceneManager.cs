@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour
 {
-    private const string PRIVACY_POLICY = @"https://games.limonadoent.com/privacy-policy.html";
+    private const string PRIVACY_POLICY = @"https://games.michitai.com/privacy-policy.html";
 
 
     [SerializeField]
